@@ -1,22 +1,50 @@
-img {
-	max-width: 100%;
+div.container {
+  @include outer-container;
 }
 
-.linear-gradient {
-	@include background(linear-gradient(#000, #ccc) left repeat);
-	height: 300px;
+//use span-columns on any element to specify the number of columns it should span==========>
+// div.element {
+//   @include span-columns(6);
+// }
+
+.product_image img {
+	@include span-columns(4);
 }
 
-.bg-image {
-	@include background-image(url("../assets/place_kitten1.png"), url("../assets/place_kitten2.png"));
-	background-position: center top, center;
-	background-repeat: no-repeat, repeat-x;
-	height: 300px;
+
+//If the element’s parent isn’t the top-most container, you need to add the number of columns of the parent element to keep the right proportions==========>
+// div.container {
+//   @include outer-container;
+
+//   div.parent-element {
+//     @include span-columns(8);
+
+//     div.element {
+//       @include span-columns(6 of 8);
+//     }
+//   }
+// }
+
+
+//To make your layout responsive, use the media() mixin to modify both the grid and the layout==========>
+// .my-class {
+//   @include media($global) { // As defined in _grid-settings.scss
+//     @include span-columns(2);
+//   }
+// }
+
+.product_image img {
+	@include media($medium) {
+		@include span-columns(6);
+	}
 }
 
-.bg-gradient{
-	@include background(url("../assets/place_kitten2.png") no-repeat, linear-gradient(red, green), center no-repeat orange scroll);
-	background-size: cover;
-	background-position: center;
-	height: 300px;
+// Just to test some things:
+
+section {
+	background-color: #ccc;
+
+		&:nth-of-type(2){
+			background-color: #eee;
+		}
 }
