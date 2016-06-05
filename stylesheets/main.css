@@ -1,0 +1,23 @@
+img {
+  max-width: 100%; }
+
+.linear-gradient {
+  background: -webkit-linear-gradient(#000, #ccc) left repeat;
+  background: linear-gradient(#000, #ccc) left repeat;
+  height: 300px; }
+
+.bg-image {
+  background-image: url("../assets/place_kitten1.png"), url("../assets/place_kitten2.png");
+  background-image: url("../assets/place_kitten1.png"), url("../assets/place_kitten2.png");
+  background-position: center top, center;
+  background-repeat: no-repeat, repeat-x;
+  height: 300px; }
+
+.bg-gradient {
+  background: url("../assets/place_kitten2.png") no-repeat, -webkit-linear-gradient(red, green), center no-repeat orange scroll;
+  background: url("../assets/place_kitten2.png") no-repeat, linear-gradient(red, green), center no-repeat orange scroll;
+  background-size: cover;
+  background-position: center;
+  height: 300px; }
+
+/*# sourceMappingURL=main.css.map */
